@@ -1,0 +1,45 @@
+body{
+	margin: 50px;
+	padding: 150px ;
+	/*background-color: rgb(242, 242, 243);*/
+	
+}
+p{
+	color: blue;
+	font-weight: bolder;
+	background-color: rgb(196, 196, 230);
+
+}
+.form{
+	width: 500px;
+	height: 100px;
+	/*background: rgb(240, 242, 246);*/
+	top:25%;
+    left: 50%;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	box-sizing: border-box;
+	padding: 40px 30px ;
+}
+
+.form fieldset{  
+	border-width: 10px;
+	border-color: rebeccapurple;
+	padding: 30px 40px 20px 40px;
+
+}
+.form button  {
+	font-size: 25px;;
+	background-color: rgb(18, 182, 70);
+	color: rgb(1, 19, 13);
+	padding: 10px 20px;
+	border-radius: 55px;
+	border-color: rgb(50, 9, 58);
+	width: 150px;
+	height: 50px;
+	margin-left:10px;
+	cursor: pointer;
+	 border: 5px solid;
+	 font-size: 25px;
+	
+  }
