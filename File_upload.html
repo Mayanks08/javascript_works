@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>file_upload</title>
+    <style>
+      body{
+        background: rgba(12, 13, 12, 0.568);
+      }
+    </style>
+</head>
+  <body>
+   <h2>Upload file</h2>
+   <img alt="" />
+   <form action="index.html" method="post">
+     <input type="file" name="file" id="file"  />
+     <!-- <label for="file">select a file...</label> -->
+   </form>
+    <script>
+  const image = document.queryselector('img');
+  const input = document.queryselector('input');
+  
+   input.addEventlistener('change', (e) => {
+     image.src = URL.createObjectURL(e.target.files[0]);
+   });
+</script>
+  </body>
+</html>
