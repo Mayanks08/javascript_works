@@ -1,0 +1,42 @@
+=<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Access Camera</title>
+</head>
+<body>
+  <h1>Access Your Camera</h1>
+  <button id="startButton">Start Camera</button>
+  <br><br>
+  <video id="video" width="640" height="480" autoplay style="display:none;" playsinline></video>
+  <p id="errorMsg" style="color:red;"></p>
+
+  <script>
+    // Access the button, video, and error message elements
+    const startButton = document.getElementById('startButton');
+    const video = document.getElementById('video');
+    const errorMsg = document.getElementById('errorMsg');
+
+    // Add a click event listener to the button
+    startButton.addEventListener('click', () => {
+      // Request access to the camera when the button is clicked
+      navigator.mediaDevices.getUserMedia({ video: true })
+        .then((stream) => {
+          // Hide the button and error message, show the video
+          startButton.style.display = 'none';
+          errorMsg.innerText = ''; // Clear any previous error messages
+          video.style.display = 'block';
+          
+          // Set the video source to the camera stream
+          video.srcObject = stream;
+        })
+        .catch((err) => {
+          // Display a user-friendly error message
+          errorMsg.innerText = "Unable to access camera: " + err.message;
+          console.error("Error accessing the camera: ", err);
+        });
+    });
+  </script>
+</body>
+</html>
